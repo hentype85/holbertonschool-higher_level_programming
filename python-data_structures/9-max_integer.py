@@ -1,10 +1,11 @@
 #!/usr/bin/python3
+
 def max_integer(my_list=[]):
-    _max = 0
-    if my_list == 0:
-        return None
+    _max = my_list[0]
+    if len(my_list) == 0:
+        return (None)
     else:
-        for i in my_list:
-            if _max < i:
-                _max = i
-    return _max
+        for i in range(len(my_list)):
+            if my_list[i] > _max:
+                _max = my_list[i]
+        return (_max)
