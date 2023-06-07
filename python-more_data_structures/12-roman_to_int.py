@@ -8,7 +8,7 @@ def roman_to_int(roman_string):
     res = 0
 
     for i in range(len(Rs)):
-        if d.get(Rs[i]) >= d.get(Rs[i + 1]):
+        if i == len(Rs) - 1 or d.get(Rs[i]) >= d.get(Rs[i + 1]):
             res += d.get(Rs[i])
         else:
             res -= d.get(Rs[i])
