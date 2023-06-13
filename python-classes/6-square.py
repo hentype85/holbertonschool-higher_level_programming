@@ -3,41 +3,44 @@
 
 
 class Square:
-    """class Square"""
+    """Square"""
 
     def __init__(self, size=0, position=(0, 0)):
-        "Initializes a Square object with a given size"
+        "Initializes a Square"
+
+        if len(position) != 2:
+            raise TypeError("position must be a tuple of 2 positive integers")
+        if type(position[0]) != int:
+            raise TypeError("position must be a tuple of 2 positive integers")
+        if position[0] < 0 or position[1] < 0:
+            raise TypeError("position must be a tuple of 2 positive integers")
+        if type(position[1]) != int:
+            raise TypeError("position must be a tuple of 2 positive integers")
+
         self.__size = size
         self.__position = position
 
     @property
     def size(self):
-        """get size of square"""
+        """get size"""
         return self.__size
 
     @property
     def position(self):
-        """get position of square"""
+        """get position"""
         return self.__position
 
     @size.setter
     def size(self, value):
-        "set size with value"
-        if (type(value) != int):
-            raise TypeError("size must be an integer")
-        if value < 0:
-            raise ValueError("size must be >= 0")
+        "set size"
         self.__size = value
 
     @position.setter
     def position(self, value):
-        "set position with value"
-        if (type(value) != tuple) or len(value) != 2:
-            raise TypeError('position must be a tuple of 2 positive integers')
-        if len([i for i in value if isinstance(i, int) and i >= 0]) != 2:
-            raise TypeError('position must be a tuple of 2 positive integers')
+        "set position"
+        if value[0] < 0 or value[1] < 0:
+            raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = value
-
 
     def area(self):
         """get the area of a square"""
