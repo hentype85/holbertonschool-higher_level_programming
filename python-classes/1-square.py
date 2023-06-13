@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """class Square"""
 
-
 class Square:
     """
     Initializes a Square object with a given size
