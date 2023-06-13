@@ -63,10 +63,10 @@ class Square:
             res += "\n"
         for i in range(self.size):
             for j in range(self.position[0]):
-                pos += " "
+                res += " "
             for k in range(self.size):
-                pos += "#"
-            pos += "\n"
+                res+= "#"
+            res += "\n"
         return res
 
     def my_print(self):
