@@ -7,6 +7,7 @@ print(add_integer(2))
 print(add_integer(100.3, -2))
 print(add_integer(float("inf")))
 print(add_integer(123, []))
+print(add_integer(float("NaN"))
 
 try:
     print(add_integer(4, "School"))
