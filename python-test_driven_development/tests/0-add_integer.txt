@@ -28,3 +28,11 @@ OverflowError: cannot convert float infinity to integer
 >>> add_integer(123, [])
 Traceback (most recent call last):
 TypeError: b must be an integer
+
+>>> add_integer("NaN")
+Traceback (most recent call last):
+ValueError: cannot convert float NaN to integer
+
+>>> add_integer(s)
+Traceback (most recent call last):
+SyntaxError: invalid syntax
