@@ -23,13 +23,13 @@ def matrix_divided(matrix, div):
                 raise TypeError(err1)
 
     newM = []
-    for col in matrix:
+    for row in matrix:
         newlist = []
-        for row in col:
-            newlist.append(round((row / div), 2))
+        for i in row:
+            newlist.append(round((i / div), 2))
         newM.append(newlist)
 
-    if len(col) != rowLen:
+    if len(row) != rowLen:
         raise TypeError(err4)
 
     return newM

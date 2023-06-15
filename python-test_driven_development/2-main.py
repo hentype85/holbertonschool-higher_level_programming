@@ -13,5 +13,4 @@ matrix2 = [
 
 print(matrix_divided(matrix, 3))
 print(matrix_divided(matrix2, 3))
-print(matrix_divided(None, 3))
 print(matrix)
