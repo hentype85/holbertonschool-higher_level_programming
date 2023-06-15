@@ -17,9 +17,9 @@ def matrix_divided(matrix, div):
 
     rowLen = len(matrix[0])
 
-    for col in matrix:
-        for row in col:
-            if not isinstance(row, (int, float)):
+    for row in matrix:
+        for i in row:
+            if not isinstance(i, (int, float)):
                 raise TypeError(err1)
 
     newM = []
