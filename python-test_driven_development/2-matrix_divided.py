@@ -3,21 +3,17 @@
 
 
 def matrix_divided(matrix, div):
-    " divides all elements of a matrix"
-
-    msg1 = "matrix must be a matrix (list of lists) of integers/floats"
-
-    if type(matrix) is None or type(matrix) != list:
-        raise TypeError(msg1)
+    if type(matrix) == None or type(matrix) != list:
+        raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
     if type(div) != int and type(div) != float:
-        raise TypeError(msg2 = "div must be a number")
+        raise TypeError("div must be a number")
     if div == 0:
         raise ZeroDivisionError("division by zero")
 
     rowLen = len(matrix[0])
 
-    for row in matrix:
-        if len(row) != rowLen:
+    for col in matrix:
+        if len(col) != rowLen:
             raise TypeError("Each row of the matrix must have the same size")
 
     newM = []
