@@ -20,7 +20,7 @@ def matrix_divided(matrix, div):
     for col in matrix:
         for row in col:
             if not isinstance(row, (int, float)):
-                raise (err1)
+                raise TypeError(err1)
 
     newM = []
     for col in matrix:

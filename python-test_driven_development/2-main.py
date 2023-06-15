@@ -6,5 +6,12 @@ matrix = [
     [4, 5, 6]
 ]
 
+matrix2 = [
+    [3, 6, 9],
+    [12, 15, 18]
+]
+
 print(matrix_divided(matrix, 3))
+print(matrix_divided(matrix2, 3))
+print(matrix_divided(None, 3))
 print(matrix)
