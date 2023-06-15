@@ -6,18 +6,21 @@ def matrix_divided(matrix, div):
     "divides all elements of a matrix"
 
     err1 = "matrix must be a matrix (list of lists) of integers/floats"
-    if type(matrix) != list or type(matrix) is None:
-        raise TypeError(err1)
-    if type(div) != int and type(div) != float:
-        raise TypeError("div must be a number")
+    err2 = "div must be a number"
+    err3 = "division by zero"
+    err4 = "Each row of the matrix must have the same size"
+
+    if not isinstance(div, (int, float)):
+        raise TypeError(err2)
     if div == 0:
-        raise ZeroDivisionError("division by zero")
+        raise ZeroDivisionError(err3)
 
     rowLen = len(matrix[0])
 
     for col in matrix:
-        if len(col) != rowLen:
-            raise TypeError("Each row of the matrix must have the same size")
+        for row in col:
+            if not isinstance(row, (int, float)):
+                raise (err1)
 
     newM = []
     for col in matrix:
@@ -25,5 +28,8 @@ def matrix_divided(matrix, div):
         for row in col:
             newlist.append(round((row / div), 2))
         newM.append(newlist)
+
+    if len(col) != rowLen:
+        raise TypeError(err4)
 
     return newM
