@@ -3,8 +3,11 @@
 
 
 def matrix_divided(matrix, div):
-    if type(matrix) == None or type(matrix) != list:
-        raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+    "divides all elements of a matrix"
+
+    err1 = "matrix must be a matrix (list of lists) of integers/floats"
+    if type(matrix) != list or type(matrix) is None:
+        raise TypeError(err1)
     if type(div) != int and type(div) != float:
         raise TypeError("div must be a number")
     if div == 0:
