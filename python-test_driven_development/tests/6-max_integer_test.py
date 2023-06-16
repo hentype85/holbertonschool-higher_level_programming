@@ -17,8 +17,8 @@ class TestMaxInteger(unittest.TestCase):
         self.assertEqual(max_integer(unordered), 4)
 
     def test_negative(self):
-        negative = [-1, -1, -10]
-        self.assertEqual(max_integer(negative), -5)
+        negative = [-2, -8, -1, -3]
+        self.assertEqual(max_integer(negative), -1)
 
     def test_one_element_list(self):
         one_element = [3]
