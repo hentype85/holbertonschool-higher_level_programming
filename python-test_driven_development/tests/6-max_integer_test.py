@@ -39,7 +39,7 @@ class TestMaxInteger(unittest.TestCase):
         floats = [1.53, 6.33, -9.123, -1.54, 8.0]
         self.assertEqual(max_integer(floats), 8.0)
     
-    def test_negatives(self):
+    def test_negatives_in_order(self):
         negative = [-2, -3, -4, -8]
         self.assertEqual(max_integer(negative), -2)
 
