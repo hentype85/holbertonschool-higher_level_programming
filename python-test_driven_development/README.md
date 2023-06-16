@@ -12,4 +12,7 @@ python3 -m doctest -v ./tests/3-say_my_name.txt | tail -2
 
 python3 -m doctest -v ./tests/4-print_square.txt
 python3 -m doctest -v ./tests/4-print_square.txt | tail -2
+
+python3 -m doctest -v ./tests/5-text_indentation.txt
+python3 -m doctest -v ./tests/5-text_indentation.txt | tail -2
 ```
