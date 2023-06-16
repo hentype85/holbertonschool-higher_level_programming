@@ -15,4 +15,7 @@ python3 -m doctest -v ./tests/4-print_square.txt | tail -2
 
 python3 -m doctest -v ./tests/5-text_indentation.txt
 python3 -m doctest -v ./tests/5-text_indentation.txt | tail -2
+
+python3 -m unittest tests.6-max_integer_test
+python3 -m unittest tests.6-max_integer_test 2>&1 | tail -1
 ```
