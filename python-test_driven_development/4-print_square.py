@@ -1,7 +1,6 @@
 """function that prints a square"""
 
 
-
 def print_square(size):
     """prints a square with #"""
 
