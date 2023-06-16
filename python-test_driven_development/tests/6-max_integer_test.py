@@ -25,10 +25,12 @@ class TestMaxInteger(unittest.TestCase):
         self.assertEqual(max_integer(one_element), 3)
 
     def test_empty(self):
-        self.assertEqual(max_integer(), None)
+        emtpy = []
+        self.assertEqual(max_integer(emtpy), None)
 
     def test_zeros(self):
-        self.assertEqual(max_integer([0, 0, 0, 0]), 0)
+        zeros = [0, 0, 0, 0]
+        self.assertEqual(max_integer(zeros), 0)
 
     def test_floats(self):
         floats = [1.53, 6.33, -9.123, -1.54, 8.0]
