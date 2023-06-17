@@ -58,7 +58,12 @@ class Rectangle:
         rec = ""
         for col in range(self.__height):
             for row in range(self.__width):
-                rec += "#"
+
+                try:
+                    rec += str(self.print_symbol)
+                except Exception:
+                    rec += type(self).print_symbol
+
             if col < self.__height - 1:
                 rec += "\n"
         return (rec)
