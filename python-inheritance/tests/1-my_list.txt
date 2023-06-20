@@ -31,7 +31,6 @@ Traceback (most recent call last):
 TypeError: print_sorted() takes 1 positional argument but 2 were given
 
 >>> l = MyList()
-print_sorted method called with 2 args:
 >>> l.print_sorted([4, 2, 6], 1)
 Traceback (most recent call last):
 TypeError: print_sorted() takes 1 positional argument but 3 were given
