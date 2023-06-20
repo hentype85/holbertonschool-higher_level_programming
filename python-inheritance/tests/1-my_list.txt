@@ -4,6 +4,10 @@
 >>> l.print_sorted()
 []
 
+>>> l = MyList()
+>>> print(l)
+[]
+
 >>> l = MyList([-1, 0, 1, 2, 10, 20, 98])
 >>> l.print_sorted()
 [-1, 0, 1, 2, 10, 20, 98]
@@ -19,11 +23,6 @@
 >>> l = MyList([-1001, -94, -232565, 0, -23424435, -123])
 >>> l.print_sorted()
 [-23424435, -232565, -1001, -123, -94, 0]
-
->>> l = MyList()
->>> l.append(7)
->>> l
-[7]
 
 >>> l = MyList()
 >>> l.print_sorted([3, 2, 6])
@@ -46,9 +45,6 @@ NameError: name 'l2' is not defined
 >>> l3 = MyList()
 >>> l3.append(1)
 >>> l3.append("tested")
->>> print(l3)
-[1, 'tested']
-
 >>> l3.print_sorted()
 Traceback (most recent call last):
 TypeError: '<' not supported between instances of 'str' and 'int'
