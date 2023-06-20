@@ -1,11 +1,10 @@
 >>> MyList = __import__('1-my_list').MyList
 
 >>> l = MyList()
->>> l.print_sorted()
+>>> print(l)
 []
 
->>> l = MyList()
->>> print(l)
+>>> l.print_sorted()
 []
 
 >>> l = MyList([-1, 0, 1, 2, 10, 20, 98])
@@ -22,6 +21,9 @@
 
 >>> l1.print_sorted()
 [-5, -4, -3, -2, -1]
+
+>>> print(l1)
+[-1, -2, -3, -4, -5]
 
 >>> l2 = MyList()
 >>> l2 = [1, "str"]
