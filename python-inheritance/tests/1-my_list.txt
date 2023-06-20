@@ -26,6 +26,13 @@
 [7]
 
 >>> l = MyList()
+>>> l.append(1)
+>>> l.print_sorted()
+[1]
+>>> print(l)
+[1]
+
+>>> l = MyList()
 >>> l.print_sorted([3, 2, 6])
 Traceback (most recent call last):
 TypeError: print_sorted() takes 1 positional argument but 2 were given
