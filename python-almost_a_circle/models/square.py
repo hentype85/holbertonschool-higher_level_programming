@@ -11,9 +11,6 @@ class Square(Rectangle):
         """Initialize attributes"""
         super().__init__(size, size, x, y, id)
         self.size = size
-        self.x = x
-        self.y = y
-        self.id = id
 
     def __str__(self):
         """returns [Square] (<id>) <x>/<y> - <size>"""
@@ -23,7 +20,7 @@ class Square(Rectangle):
     @property
     def size(self):
         """get size"""
-        return self.width
+        return self.__size
 
     @size.setter
     def size(self, value):
@@ -32,5 +29,4 @@ class Square(Rectangle):
             raise TypeError("width must be an integer")
         if value <= 0:
             raise ValueError("width must be > 0")
-        self.__width = value
-        self.__height = value
+        self.__size = value
