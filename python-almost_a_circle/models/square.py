@@ -43,12 +43,5 @@ class Square(Rectangle):
             if len(args) >= 4:
                 self.y = args[3]
         else:
-            for key, val in kwargs.items():
-                if key == "id":
-                    self.id = val
-                if key == "size":
-                    self.size = val
-                if key == "x":
-                    self.x = val
-                if key == "y":
-                    self.y = val
+            for k, v in kwargs.items():
+                setattr(self, k, v)
