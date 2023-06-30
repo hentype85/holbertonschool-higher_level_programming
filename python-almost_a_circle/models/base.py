@@ -33,5 +33,5 @@ class Base:
             with open(fileName, mode="w", encoding="UTF-8") as fd:
                 jList = []
                 for obj in list_objs:
-                    jList.append(cls.to_dictionary(obj))
-                fd.write(Base.to_json_string(jList))
+                    jList.append(obj.to_dictionary())
+                fd.write(cls.to_json_string(jList))
