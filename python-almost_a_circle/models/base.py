@@ -30,8 +30,8 @@ class Base:
         if list_objs is None:
             return []
         else:
+            jList = []
+            for obj in list_objs:
+                jList.append(obj.to_dictionary())
             with open(fileName, mode="w", encoding="UTF-8") as fd:
-                jList = []
-                for obj in list_objs:
-                    jList.append(obj.to_dictionary())
                 fd.write(cls.to_json_string(jList))
