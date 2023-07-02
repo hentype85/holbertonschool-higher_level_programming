@@ -31,3 +31,11 @@ class TestCodeFormat(unittest.TestCase):
 
 class test_Square(unittest.TestCase):
     """tests Square"""
+
+    def setUp(self):
+        """initialice insatnce with width and height"""
+        self.s = Square(5, 10)
+
+    def delRect(self):
+        """delete instance"""
+        del self.s

@@ -3,7 +3,6 @@
 
 from models.base import Base
 from models.square import Square
-from models.rectangle import Rectangle
 import unittest
 import pep8
 import json
@@ -43,7 +42,7 @@ class test_Base(unittest.TestCase):
         self.assertEqual(50, b.id)
 
     def test_id_zero(self):
-        """ending an id 0"""
+        """id 0"""
         b = Base(0)
         self.assertEqual(0, b.id)
 
@@ -54,8 +53,8 @@ class test_Base(unittest.TestCase):
 
     def test_id_string(self):
         """id is not an int"""
-        b = Base("Betty")
-        self.assertEqual("Betty", b.id)
+        b = Base("str")
+        self.assertEqual("str", b.id)
 
     def test_id_list(self):
         """id is not an int"""
@@ -81,22 +80,22 @@ class test_Base(unittest.TestCase):
 
     def test_to_json_value(self):
         """testing json"""
-        sq = Square(1, 0, 0, 609)
+        sq = Square(5, 1, 1, 2)
         json_dict = sq.to_dictionary()
         json_string = Base.to_json_string([json_dict])
         self.assertEqual(json.loads(json_string),
-                         [{"id": 609, "y": 0, "size": 1, "x": 0}])
+                         [{"id": 2, "y": 1, "size": 5, "x": 1}])
 
     def test_to_json_None(self):
         """testing json"""
-        sq = Square(1, 0, 0, 609)
+        sq = Square(1, 0, 0, 100)
         json_dict = sq.to_dictionary()
         json_string = Base.to_json_string(None)
         self.assertEqual(json_string, "[]")
 
     def test_to_json_Empty(self):
         """testing json"""
-        sq = Square(1, 0, 0, 609)
+        sq = Square(1, 0, 0, 100)
         json_dict = sq.to_dictionary()
         json_string = Base.to_json_string([])
         self.assertEqual(json_string, "[]")

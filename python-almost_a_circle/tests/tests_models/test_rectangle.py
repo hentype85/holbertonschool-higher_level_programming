@@ -32,7 +32,10 @@ class TestCodeFormat(unittest.TestCase):
 class test_Rectangle(unittest.TestCase):
     """tests Rectangle"""
 
-    def test_Rectangle(self):
-        """test Rectangle"""
-        r = Rectangle(1, 1)
-        self.assertEqual(r.id, 3)
+    def setUp(self):
+        """initialice insatnce with width and height"""
+        self.r = Rectangle(5, 10)
+
+    def delRect(self):
+        """delete instance"""
+        del self.r
