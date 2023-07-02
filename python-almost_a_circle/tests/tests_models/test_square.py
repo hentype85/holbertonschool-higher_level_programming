@@ -32,10 +32,57 @@ class TestCodeFormat(unittest.TestCase):
 class test_Square(unittest.TestCase):
     """tests Square"""
 
-    def setUp(self):
-        """initialice insatnce with width and height"""
-        self.s = Square(5, 10)
+    def test_id(self):
+        """test id"""
+        sq = Square(2, 0, 0, 1)
+        self.assertEqual(1, sq.id)
+    
+    def test_width_string(self):
+        """testing for other type"""
+        with self.assertRaises(TypeError):
+            sq = Square("a")
+    
+    def test_width_list(self):
+        """testing for other type"""
+        with self.assertRaises(TypeError):
+            sq = Square([10, 6])
+    
+    def test_x_value(self):
+        """negative x value"""
+        square = Square(1)
+        with self.assertRaises(ValueError):
+            square.x = -2
+    
+    def test_y_value(self):
+        """negative y value"""
+        square = Square(1)
+        with self.assertRaises(ValueError):
+            square.y = -2
 
-    def delRect(self):
-        """delete instance"""
-        del self.s
+    def test_x_type(self):
+        """test no int values in x"""
+        sq = Square(2)
+        with self.assertRaises(TypeError):
+            sq.x = [1, 2, 3]
+            sq.x = {1, 2}
+            sq.x = "1"
+            sq.x = 1.2
+            sq.x = None
+            sq.x = True
+            sq.x = {}
+            sq.x = (1, 2, 3)
+            sq.x = float()
+
+    def test_y_type(self):
+        """test no int values in y"""
+        sq = Square(2)
+        with self.assertRaises(TypeError):
+            sq.y = [1, 2, 3]
+            sq.y = {1, 2}
+            sq.y = "1"
+            sq.y = 1.2
+            sq.y = None
+            sq.y = True
+            sq.y = {}
+            sq.y = (1, 2, 3)
+            sq.y = float()
