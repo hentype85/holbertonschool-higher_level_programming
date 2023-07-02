@@ -32,76 +32,71 @@ class TestCodeFormat(unittest.TestCase):
 class test_Base(unittest.TestCase):
     """tests Base"""
 
-    def test_Base(self):
-        """test Base"""
-        b = Base(1)
-        self.assertEqual(b.id, 1)
-
     def test_id_none(self):
-        """sending no id"""
+        """no id"""
         b = Base()
         self.assertEqual(1, b.id)
 
     def test_id(self):
-        """sending a valid id"""
-        b = Base(10)
-        self.assertEqual(10, b.id)
+        """id"""
+        b = Base(50)
+        self.assertEqual(50, b.id)
 
     def test_id_zero(self):
-        """sending an id 0"""
+        """ending an id 0"""
         b = Base(0)
         self.assertEqual(0, b.id)
 
     def test_id_negative(self):
-        """sending negative id"""
+        """negative id"""
         b = Base(-20)
         self.assertEqual(-20, b.id)
 
     def test_id_string(self):
-        """sending an id that is not an int"""
-        b = Base("hola")
-        self.assertEqual("hola", b.id)
+        """id is not an int"""
+        b = Base("Betty")
+        self.assertEqual("Betty", b.id)
 
     def test_id_list(self):
-        """sending an id that is not an int"""
+        """id is not an int"""
         b = Base([1, 2, 3])
         self.assertEqual([1, 2, 3], b.id)
 
     def test_id_dict(self):
-        """sending an id that is not an int"""
-        b = Base({"id": 106})
-        self.assertEqual({"id": 106}, b.id)
+        """id is not an int"""
+        b = Base({"id": 100})
+        self.assertEqual({"id": 100}, b.id)
 
     def test_id_tuple(self):
-        """sending an id that is not an int"""
-        b = Base((7,))
-        self.assertEqual((7,), b.id)
+        """id is not an int"""
+        b = Base((8,))
+        self.assertEqual((8,), b.id)
 
     def test_to_json_type(self):
-        """test the json string"""
+        """testing json"""
         sq = Square(1)
         json_dict = sq.to_dictionary()
         json_string = Base.to_json_string([json_dict])
         self.assertEqual(type(json_string), str)
 
     def test_to_json_value(self):
-        """test the json string"""
-        sq = Square(1, 0, 0, 100)
+        """testing json"""
+        sq = Square(1, 0, 0, 609)
         json_dict = sq.to_dictionary()
         json_string = Base.to_json_string([json_dict])
         self.assertEqual(json.loads(json_string),
-                         [{"id": 100, "y": 0, "size": 1, "x": 0}])
+                         [{"id": 609, "y": 0, "size": 1, "x": 0}])
 
     def test_to_json_None(self):
-        """test the json string"""
-        sq = Square(1, 0, 0, 100)
+        """testing json"""
+        sq = Square(1, 0, 0, 609)
         json_dict = sq.to_dictionary()
         json_string = Base.to_json_string(None)
         self.assertEqual(json_string, "[]")
 
     def test_to_json_Empty(self):
-        """test the json string"""
-        sq = Square(1, 0, 0, 100)
+        """testing json"""
+        sq = Square(1, 0, 0, 609)
         json_dict = sq.to_dictionary()
         json_string = Base.to_json_string([])
         self.assertEqual(json_string, "[]")
