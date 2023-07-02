@@ -2,7 +2,6 @@
 """tests rectangle"""
 
 from models.base import Base
-from models.square import Square
 from models.rectangle import Rectangle
 import unittest
 import pep8

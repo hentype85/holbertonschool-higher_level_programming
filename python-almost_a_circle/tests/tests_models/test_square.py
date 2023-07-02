@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """tests square"""
 
+from models.base import Base
 from models.square import Square
 import unittest
 import pep8
@@ -29,3 +30,10 @@ class TestCodeFormat(unittest.TestCase):
 
 class test_Square(unittest.TestCase):
     """tests Square"""
+
+    def test_ok_sq_Subclass(self):
+        self.assertIsInstance(Square(1), Base)
+    
+    def test_one_and_only_arg(self):
+        s5 = Square(1)
+        self.assertEqual(s5.id, 3)

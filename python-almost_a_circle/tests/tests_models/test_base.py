@@ -45,12 +45,12 @@ class test_Base(unittest.TestCase):
 
     def test_to_json_Empty(self):
         self.assertEqual(Base.to_json_string([]), "[]")
-    
+
     def test_json_type(self):
         sq = Square(1)
         json_str = Base.to_json_string([sq.to_dictionary()])
         self.assertEqual(type(json_str), str)
-    
+
     def test_json_type(self):
         rc = Rectangle(2,2,1,1,100)
         json_str = Rectangle.to_json_string([rc.to_dictionary()])
