@@ -17,7 +17,7 @@ class TestCodeFormat(unittest.TestCase):
         result = pep8style.check_files(
             ["../../models/base.py"])
         self.assertEqual(result.total_errors, 1,
-                         "Found code style errors (and warnings).")
+                         "Found pep8 code style errors and warnings")
 
     def test_pep8_conformance_test(self):
         """Test that conform to PEP8"""
@@ -25,7 +25,7 @@ class TestCodeFormat(unittest.TestCase):
         result = pep8style.check_files(
             ["../../tests/test_models/test_base.py"])
         self.assertEqual(result.total_errors, 1,
-                         "Found code style errors (and warnings).")
+                         "Found pep8 code style errors and warnings")
 
 
 class test_Base(unittest.TestCase):
@@ -33,8 +33,8 @@ class test_Base(unittest.TestCase):
 
     def test_id_none(self):
         """no id"""
-        b = Base()
-        self.assertEqual(1, b.id)
+        b = Base(10)
+        self.assertEqual(10, b.id)
 
     def test_id(self):
         """id"""

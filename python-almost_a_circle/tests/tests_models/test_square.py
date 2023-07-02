@@ -18,7 +18,7 @@ class TestCodeFormat(unittest.TestCase):
         result = pep8style.check_files(
             ["../../models/square.py"])
         self.assertEqual(result.total_errors, 1,
-                         "Found code style errors (and warnings).")
+                         "Found pep8 code style errors and warnings")
 
     def test_pep8_conformance_test(self):
         """Test that conform to PEP8"""
@@ -26,7 +26,7 @@ class TestCodeFormat(unittest.TestCase):
         result = pep8style.check_files(
             ["../../tests/test_models/test_square.py"])
         self.assertEqual(result.total_errors, 1,
-                         "Found code style errors (and warnings).")
+                         "Found pep8 code style errors and warnings")
 
 
 class test_Square(unittest.TestCase):
@@ -36,23 +36,23 @@ class test_Square(unittest.TestCase):
         """test id"""
         sq = Square(2, 0, 0, 1)
         self.assertEqual(1, sq.id)
-    
+
     def test_width_string(self):
         """testing for other type"""
         with self.assertRaises(TypeError):
             sq = Square("a")
-    
+
     def test_width_list(self):
         """testing for other type"""
         with self.assertRaises(TypeError):
             sq = Square([10, 6])
-    
+
     def test_x_value(self):
         """negative x value"""
         square = Square(1)
         with self.assertRaises(ValueError):
             square.x = -2
-    
+
     def test_y_value(self):
         """negative y value"""
         square = Square(1)
@@ -66,12 +66,9 @@ class test_Square(unittest.TestCase):
             sq.x = [1, 2, 3]
             sq.x = {1, 2}
             sq.x = "1"
-            sq.x = 1.2
-            sq.x = None
             sq.x = True
             sq.x = {}
             sq.x = (1, 2, 3)
-            sq.x = float()
 
     def test_y_type(self):
         """test no int values in y"""
@@ -82,7 +79,27 @@ class test_Square(unittest.TestCase):
             sq.y = "1"
             sq.y = 1.2
             sq.y = None
-            sq.y = True
-            sq.y = {}
+            sq.y = []
             sq.y = (1, 2, 3)
-            sq.y = float()
+        
+    def test_str(self):
+        """test str for square"""
+        sq = Square(4, 0, 0, 30)
+        self.assertEqual(sq.__str__(), '[Square] (30) 0/0 - 4')
+
+    def test_update(self):
+        """test correct update"""
+        sq = Square(5)
+        sq.update()
+        sq.update(1, 2, y=8)
+        sq.update(1, 12, id=100)
+        sq.update(size=20, y=40)
+    
+    def test_wrong_update(self):
+        """test wrong update"""
+        sq = Square(5)
+        with self.assertRaises(ValueError):
+            sq.update(7)
+            sq.update(-1, 1, 2)
+            sq.update(x=2, y=2, size=-3)
+            sq.update(size=100)

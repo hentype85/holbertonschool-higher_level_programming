@@ -18,7 +18,7 @@ class TestCodeFormat(unittest.TestCase):
         result = pep8style.check_files(
             ["../../models/rectangle.py"])
         self.assertEqual(result.total_errors, 1,
-                         "Found code style errors (and warnings).")
+                         "Found pep8 code style errors and warnings")
 
     def test_pep8_conformance_test(self):
         """Test that conform to PEP8"""
@@ -26,16 +26,8 @@ class TestCodeFormat(unittest.TestCase):
         result = pep8style.check_files(
             ["../../tests/test_models/test_rectangle.py"])
         self.assertEqual(result.total_errors, 1,
-                         "Found code style errors (and warnings).")
+                         "Found pep8 code style errors and warnings")
 
 
 class test_Rectangle(unittest.TestCase):
     """tests Rectangle"""
-
-    def setUp(self):
-        """initialice insatnce with width and height"""
-        self.r = Rectangle(5, 10)
-
-    def delRect(self):
-        """delete instance"""
-        del self.r
