@@ -33,23 +33,23 @@ class test_Square(unittest.TestCase):
 
     def test_ok_sq_Subclass(self):
         self.assertIsInstance(Square(1), Rectangle)
-    
+
     def test_one_and_only_arg(self):
         sq = Square(5)
         self.assertEqual(sq.id, 3)
-    
+
     def test_access_and_setter_w(self):
         with self.assertRaises(AttributeError):
             Square(1, 5, 5, 98).__width
-    
+
     def test_access_and_setter_h(self):
         with self.assertRaises(AttributeError):
             Square(1, 5, 5, 98).__height
-    
+
     def test_access_and_setter_x(self):
         with self.assertRaises(AttributeError):
             Square(1, 5, 5, 98).__x
-    
+
     def test_access_and_setter_y(self):
         with self.assertRaises(AttributeError):
             Square(1, 5, 5, 98).__y
@@ -57,9 +57,27 @@ class test_Square(unittest.TestCase):
     def test_access_and_setter_size(self):
         with self.assertRaises(ValueError):
             Square(1, 5, 5, 98).size = 0
-    
+
     def test_x_notInt(self):
         with self.assertRaises(TypeError):
             Square(1, "ABC", 5, 98)
     
+    def test_size_zero(self):
+        with self.assertRaises(ValueError):
+            Square(0, 5, 5, 98)
     
+    def test_x_float(self):
+        with self.assertRaises(TypeError):
+            Square(1, 1.05, 5, 98)
+
+    def test_y_float(self):
+        with self.assertRaises(TypeError):
+            Square(1, 5, 1.05, 98)
+
+    def test_area(self):
+        sq = Square(3, 5, 5, 98)
+        self.assertEqual(sq.area(), 3 * 3)
+    
+    def test_str_overload(self):
+        sq = Square(15, 9, 7, 88)
+        self.assertEqual(sq.__str__(), "[Square] (88) 9/7 - 15")
