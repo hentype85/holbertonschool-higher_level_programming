@@ -61,11 +61,11 @@ class test_Square(unittest.TestCase):
     def test_x_notInt(self):
         with self.assertRaises(TypeError):
             Square(1, "ABC", 5, 98)
-    
+
     def test_size_zero(self):
         with self.assertRaises(ValueError):
             Square(0, 5, 5, 98)
-    
+
     def test_x_float(self):
         with self.assertRaises(TypeError):
             Square(1, 1.05, 5, 98)
@@ -77,7 +77,7 @@ class test_Square(unittest.TestCase):
     def test_area(self):
         sq = Square(3, 5, 5, 98)
         self.assertEqual(sq.area(), 3 * 3)
-    
+
     def test_str_overload(self):
         sq = Square(15, 9, 7, 88)
         self.assertEqual(sq.__str__(), "[Square] (88) 9/7 - 15")
